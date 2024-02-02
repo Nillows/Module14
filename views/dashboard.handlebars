@@ -1,0 +1,30 @@
+<div class="your-posts-div">
+    {{#each posts}}
+    <div class="post-card">
+        <div class="post-title">
+            <h3>{{title}}</h3>
+            <div class="post-icons">
+                <span class="update-post-icon" data-post-id="{{id}}"></span>
+                <span class="delete-post-icon" data-post-id="{{id}}"></span>
+            </div>
+        </div>
+        <p>Posted by: {{User.username}} on {{created_at}}</p>
+        <p>{{contents}}</p>
+        <button class="view-comments-button" data-post-id="{{id}}">View Comments</button>
+
+        <!-- Hidden update form -->
+        <form class="update-post-form" data-post-id="{{id}}" style="display: none;">
+            <input type="text" class="update-post-title" placeholder="Title">
+            <input type="text" class="update-post-contents">
+            <button type="submit" class="update-post-btn">Update Post</button>
+        </form>
+    </div>
+    {{/each}}
+</div>
+<a href="/new_post">
+    <button id="new-post-btn">New Post</button>
+</a>
+
+<script src="/js/clickPost.js"></script>
+<script src="/js/deletePost.js"></script>
+<script src="/js/updatePost.js"></script>

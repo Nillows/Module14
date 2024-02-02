@@ -1,0 +1,18 @@
+{{#if isLogin}}
+<h1>Login</h1>
+{{else}}
+<h1>Signup</h1>
+{{/if}}
+
+<form id="auth-form">
+    <input type="text" id="username-input" placeholder="username">
+    <input type="password" id="password-input" placeholder="password">
+    
+    {{#if isLogin}}
+    <button id="login-btn">Login</button>
+    {{else}}
+    <button id="signup-btn">Signup</button>
+    {{/if}}
+</form>
+
+<script src="/js/auth.js"></script>

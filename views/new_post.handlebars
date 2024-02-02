@@ -1,0 +1,9 @@
+<form id="post-form">
+    <input type="hidden" id="post-id" value="{{post.id}}">
+    <input type="hidden" id="is-update" value="{{#if post.id}}true{{else}}false{{/if}}">
+    <input type="text" id="post-title" placeholder="Post Title" value="{{post.title}}">
+    <input type="text" id="post-contents" placeholder="Type you message here" value="{{post.contents}}">
+    <button id="post-btn">{{#if post.id}}Update{{else}}Post{{/if}}!</button>
+</form>
+
+<script src="/js/newPost.js"></script>

@@ -1,0 +1,12 @@
+<div class="card-box">
+    {{#each posts}}
+    <div class="post-card">
+        <h3>{{title}}</h3>
+        <p>Posted by: {{User.username}} on {{created_at}}</p>
+        <p>{{contents}}</p>
+        <button class="view-comments-button" data-post-id="{{id}}">View Comments</button>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/clickPost.js"></script>
