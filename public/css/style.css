@@ -1,0 +1,205 @@
+/* Base resets */
+body, h1, h2, h3, p, ul, li, figure, figcaption, div {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  }
+  
+  body {
+    background-color: #121212; /* Dark background for the noir feel */
+    color: #c7c7c7; /* Soft white for main text */
+  }
+  
+  header {
+    background-color: #0a0f0d; /* Slightly different dark shade for depth */
+    color: #39ff14; /* Bright neon green for accents, like cyberpunk aesthetic */
+    width: 100vw;
+    padding: 20px 5px; /* Adjusted padding for more space */
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.4); /* Neon glow effect */
+  }
+  
+  h1, h2, h3 {
+    padding: 20px;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  a {
+    color: #39ff14; /* Neon green links */
+    padding: 5px;
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #ffffff; /* Changes color on hover for interaction feedback */
+  }
+  
+  .card-box, .your-posts-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Centering items to start */
+    padding: 10px;
+  }
+  
+  .post-card {
+    background-color: #1e2226; /* Dark card background */
+    border: 1px solid #333; /* Subtle border */
+    margin: 10px;
+    padding: 10px;
+    width: fit-content; /* Adjusted for better content fitting */
+    color: #c7c7c7; /* Matching text color */
+  }
+  
+  .post-card h3, .comment p {
+    background-color: #333; /* Darker background for headers */
+    color: #c7c7c7; /* Neon green text */
+    margin: 0;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #333; /* Dark button background */
+    color: #39ff14; /* Neon green text */
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #39ff14; /* Brightens on hover */
+    color: #121212;
+  }
+  
+  form {
+    margin: 10px;
+    padding: 10px;
+    background-color: #1e2226; /* Matching form background */
+  }
+  
+  .comment {
+    border: 2px solid #39ff14; /* Subtler neon green border */
+    margin: 5px;
+    padding: 5px;
+    width: auto; /* Allows the comment to take up necessary width */
+    display: block; /* Changes display to block for better spacing */
+    background-color: #1e2226; /* Keeps dark background for consistency */
+    color: #c7c7c7; /* Ensures text color matches the theme */
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.4); /* Adds a subtle neon glow effect */
+    border-radius: 5px; /* Adds slight rounding to borders for a modern touch */
+  }
+  
+  
+  .comment-card {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+
+  .view-comments-button {
+    background-color: #333; /* Dark background */
+    color: #39ff14; /* Neon green text */
+    border: 2px solid #39ff14; /* Neon green border */
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    font-size: 0.8rem; /* Smaller font size */
+    text-transform: uppercase; /* Stylistic choice for uppercase text */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.4); /* Subtle neon glow effect */
+    float: right; /* Position the button to the right */
+    margin-right: 10px; /* Margin to space it from the right edge */
+}
+
+.view-comments-button:hover {
+    background-color: #39ff14; /* Neon green background on hover */
+    color: #121212; /* Dark text on hover for contrast */
+}
+
+.post-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-title h3 {
+  margin-right: 10px; /* Adjust as needed for spacing */
+}
+
+.post-icons {
+  display: flex;
+  align-items: center;
+}
+
+.update-post-icon,
+.delete-post-icon {
+  cursor: pointer;
+  margin-left: 10px; /* Adjust as needed for spacing */
+  position: relative; /* Needed for tooltip positioning */
+}
+
+.update-post-icon::before,
+.delete-post-icon::before {
+  content: "\270E"; /* ✎ Unicode character for update/edit icon */
+}
+
+.delete-post-icon::before {
+  content: "\2716"; /* ✖ Unicode character for delete icon */
+}
+
+/* Tooltip for Update Icon */
+.update-post-icon::after {
+  content: "Update Post";
+  position: absolute;
+  white-space: nowrap;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  font-size: 0.8rem;
+  visibility: hidden;
+}
+
+.update-post-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip for Delete Icon */
+.delete-post-icon::after {
+  content: "Delete Post";
+  position: absolute;
+  white-space: nowrap;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  font-size: 0.8rem;
+  visibility: hidden;
+}
+
+.delete-post-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}

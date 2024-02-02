@@ -1,0 +1,25 @@
+<div class="card-box">
+    <div class="post-card">
+        <h3>{{post.title}}</h3>
+        <p>Posted by: {{post.User.username}} on {{post.created_at}}</p>
+        <p>{{post.contents}}</p>
+    </div>
+    <div class="comment-card">
+        <p>Comments:</p>
+        {{#each comments}}
+        <div class="comment">
+            <p>Posted by: {{User.username}}</p>
+            <p>{{contents}}</p>
+        </div>
+        {{/each}}
+        {{#if loggedIn}}
+        <form id="comment-form">
+            <input type="text-area" id="comment-contents">
+            <button id="comment-button">Submit</button>
+        </form>
+        {{else}}
+        {{/if}}
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>
