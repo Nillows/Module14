@@ -1,6 +1,8 @@
 
 # Thom's Tech Blog
 
+![Screenshot](https://i.imgur.com/6lZFKsg.png "Screenshot")
+
 ## Description 
 This project is a simple blog site, allowing users to creat accounts, create posts, and comment on those posts to house discussions.
 
